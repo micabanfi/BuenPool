@@ -26,4 +26,38 @@ public class Person {
     public void addVehicle(Vehicle vehicle){
         this.vehicles.add(vehicle);
     }
+    
+    public String getName () { 
+        return name; 
+      } 
+       
+      public String getSurname() { 
+        return surname; 
+      } 
+    
+     public String getPhone() { 
+        return phone; 
+      } 
+       
+     public String getGender() { 
+        return gender; 
+      } 
+     
+     public Rating getRating() { 
+        return rating; 
+      } 
+      
+     public Date getBirthDate() { 
+        return birthDate; 
+      } 
+      public Preferences getPreferences() { 
+        return preferences; 
+      } 
+       
+      @Override  
+      public String toString() { 
+        String s=""; 
+        s="Nombre: "+ name+"\nApellido: "+surname+"\nTelefono: "+phone+"\nFecha de Nacimiento: "+birthDate+"\nSexo:"+gender+"\nPreferencias: "+preferences.toString();
+        return s; 
+      } 
 }

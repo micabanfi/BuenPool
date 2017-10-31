@@ -19,4 +19,12 @@ public class Credential {
 
         return this.userName.equals(aux.userName) && this.password.equals(aux.password);
     }
+    
+    @Override 
+    public int hashCode() { 
+      int result = 17; 
+      result = 31*result + password.hashCode(); 
+      result = 31*result + userName.hashCode(); 
+      return result; 
+    } 
 }

@@ -10,4 +10,25 @@ public class Preferences {
         this.smoke=smoke;
         this.food=food;
     }
+    
+    @Override
+    public String toString() { 
+      String smokeString =""; 
+      String foodString = ""; 
+      if(smoke) { 
+        smokeString = "SI"; 
+      } 
+      else { 
+        smokeString = "NO"; 
+      } 
+      if(food) { 
+        foodString = "SI"; 
+      } 
+      else { 
+        foodString = "NO"; 
+      } 
+      String s = "Preferencias del usuario:\nFUMAR: "+smokeString+"\nCOMIDA: "+ foodString; 
+    return s; 
+    } 
+}
 }
