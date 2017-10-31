@@ -1,5 +1,12 @@
 package root;
 
+import root.User.Credential;
+import root.User.Person;
+import root.User.User;
+import root.User.Vehicle;
+
+import java.util.Date;
+
 public class Tester {
     public static void main(String[] args){
         //creo vehiculo.
@@ -7,7 +14,7 @@ public class Tester {
         Vehicle vehicle1=new Vehicle("Fiat","500","Blanco",2015,"ABC123",4,false,true);
 
         //creo persona
-        Person person1=new Person("Micaela","Banfi","Informatica","1234567890",false,true);
+        Person person1=new Person("Micaela","Banfi","Informatica","1234567890",false,true,"Femenino");
 
         //creo la credential
         Credential credential1=new Credential("mica","1234");

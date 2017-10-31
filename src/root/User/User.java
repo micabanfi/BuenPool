@@ -1,5 +1,7 @@
 package root.User;
 
+import root.Ride.Ride;
+
 import java.util.ArrayList;
 
 public class User {

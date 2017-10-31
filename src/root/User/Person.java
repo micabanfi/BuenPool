@@ -13,13 +13,13 @@ public class Person {
     private Preferences preferences;
     private ArrayList<Vehicle> vehicles;
 
-    public Person(String name, String surname, String career, String phone,boolean smoke,boolean food,String gender,Date birthDate){
+    public Person(String name, String surname, String career, String phone,boolean smoke,boolean food,String gender){
         this.name=name;
         this.surname=surname;
         this.phone=phone;
         this.preferences = new Preferences(career, smoke, food);
         this.gender=gender;
-        this.birthDate=birthDate;
+        //this.birthDate=birthDate;
         //inicializar raiting
     }
 

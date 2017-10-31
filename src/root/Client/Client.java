@@ -11,7 +11,7 @@ public class Client {
         this.state = state;
     }
 
-    
+
     public void currentTrips(){}
 
     public void poolHistory(){}
