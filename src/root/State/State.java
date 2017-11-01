@@ -36,7 +36,6 @@ public class State {
             if (user.equalCredentials(cred)) {
                 return user;
             }
-
         }
         throw new InvalidCredentials();
     }
@@ -67,6 +66,17 @@ public class State {
        return flag;
    }*/
 
+    public void AddRideToListByDate(Ride ride) throws ExistingRideException{//No me tiran los 50 errores que deberia tirar... arreglarlo dsps
+        boolean flag = true;
+        for(int i = 0; flag || i < currentRides.size(); i++){// Feo feo, dsps me lo cambio bien
+            if (ride.equals(currentRides.get(i).getRide()))
+                throw new ExistingRideException();
+            if (!(currentRides.get(i).getRide().getDate().before(ride.getDate()))) {
+                currentRides.add(i, new RideAdmin(ride));
+                flag = true;
+            }
+        }
+    }
 
    public void AddRideToList(Ride ride) throws ExistingRideException{
 	   for(RideAdmin rideAdmin : currentRides) {
@@ -103,7 +113,8 @@ public class State {
        }
    }
 
-/*   public Ride modifyRide(Ride ride) throws InvalidFields{
+/* Si es que usamos este metodo, cambiarlo para que sea compatible a RideAdmin
+    public Ride modifyRide(Ride ride) throws InvalidFields{
         for(int i = 0; i < users.size(); i++){
             Ride aux = currentRides.get(i);
             if (aux.getRide().equals(ride)){
@@ -119,4 +130,19 @@ public class State {
 
    //Creo que no lo necesitamos
    public ArrayList<RideAdmin> getExpiredRides() { return expiredRides; }
+
+   /*
+   public User modifyUser(User user) throw ExistingUserException{
+       for(User us : Users) {
+           if (us.equals(user)) {
+               //User.remove(us); no se si funca
+               int i = Users.indexOf(us);
+               User.remove(i);
+               User.add(user);
+               return user;
+           }
+       }
+       throw new ExistingUserException();
+   }
+   */
 }
